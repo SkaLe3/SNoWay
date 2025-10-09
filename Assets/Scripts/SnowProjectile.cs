@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SnowProjectile : MonoBehaviour
@@ -7,6 +6,7 @@ public class SnowProjectile : MonoBehaviour
     [Header("Snowball Settings")]
     [SerializeField] private GameObject HitSoundPrefab;
     [SerializeField] private GameObject HitParticlesPrefab;
+    [SerializeField] private float SizeFactor = 1f;
     public float SnowAmount => m_SnowAmount;
     private float m_SnowAmount;
 
@@ -29,9 +29,10 @@ public class SnowProjectile : MonoBehaviour
     public void SetSize(float snowAmount)
     {
         m_SnowAmount = snowAmount;
-        double baseValue = (3 * m_SnowAmount) / (4 * Math.PI);
+        double baseValue = (3 * m_SnowAmount) / (4 * Mathf.PI);
         float radius = Mathf.Pow((float)baseValue, (float)(1.0 / 3.0));
         radius *= 0.6f;
+        radius *= SizeFactor;
         transform.localScale = new Vector3(radius, radius, radius);
     }
 
@@ -52,6 +53,8 @@ public class SnowProjectile : MonoBehaviour
         {
 
             GameObject soundObject = Instantiate(HitSoundPrefab, impactPoint, Quaternion.identity);
+            soundObject.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+            soundObject.GetComponent<AudioSource>().volume = Random.Range(0.8f, 1.2f);
             Destroy(soundObject, 1f);
         }
         if (HitParticlesPrefab != null)

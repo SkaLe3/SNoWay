@@ -75,7 +75,7 @@ public class BallMovement : MonoBehaviour
         float sizeFactor = Mathf.Max(0.01f, radius / m_BaseRadius);
 
         m_CurrentMaxSpeed = BaseMaxSpeed * Mathf.Pow(sizeFactor, MaxSpeedExponent);
-        m_CurrentAcceleration = BaseAcceleration * Mathf.Pow(sizeFactor, -AccelerationExponent);
+        m_CurrentAcceleration = BaseAcceleration * Mathf.Pow(sizeFactor, AccelerationExponent);
     }
 
     void AddMovement()

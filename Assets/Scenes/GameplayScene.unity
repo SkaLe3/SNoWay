@@ -936,7 +936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Snowballs Throwed: '
+  m_text: 'Snowballs Thrown: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 383dc7710721b194794a5e785b56145e, type: 2}
   m_sharedMaterial: {fileID: 3664659376286181459, guid: 383dc7710721b194794a5e785b56145e, type: 2}
@@ -3567,7 +3567,7 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 1280235172037410473, guid: d15aeab1a6febae438ff33542484fa30, type: 3}
   Target: {fileID: 745692174}
   SpawnDistance: 120
-  MinSpawnInterval: 3
+  MinSpawnInterval: 2
   MaxSpawnInterval: 9
   MaxEnemies: 10
 --- !u!4 &1523029666
@@ -4015,8 +4015,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -9281,7 +9281,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898064810}
   serializedVersion: 5
-  m_Mass: 1000
+  m_Mass: 10000
   m_LinearDamping: 1
   m_AngularDamping: 0.7
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -9314,10 +9314,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
   CursorTarget: {fileID: 171721970}
   RollingSound: {fileID: 1615326009}
-  BaseAcceleration: 30
-  BaseMaxSpeed: 40
-  MaxSpeedExponent: 1.2
-  AccelerationExponent: 0.7
+  BaseAcceleration: 60
+  BaseMaxSpeed: 70
+  MaxSpeedExponent: -0.4
+  AccelerationExponent: -1
   StopDistance: 2
 --- !u!114 &1898064817
 MonoBehaviour:
@@ -9345,7 +9345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallGrowing
   SnowPath: {fileID: 2082547416}
   SnowField: {fileID: 239232643}
-  GrowthRate: 0.05
+  GrowthRate: 0.3
+  SnowCollectionRate: 0.7
   StartRadius: 1
   MaxRadius: 5
   m_SnowStorage: 0
@@ -14800,12 +14801,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5046333917882731666, guid: 5082e3c375cda194ea0300276fc1d10d, type: 3}
+      propertyPath: MaxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046333917882731666, guid: 5082e3c375cda194ea0300276fc1d10d, type: 3}
       propertyPath: bSnowHeals
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5046333917882731666, guid: 5082e3c375cda194ea0300276fc1d10d, type: 3}
       propertyPath: CurrentHealth
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5046333917882731666, guid: 5082e3c375cda194ea0300276fc1d10d, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size

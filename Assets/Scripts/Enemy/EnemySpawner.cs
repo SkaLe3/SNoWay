@@ -12,10 +12,17 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int MaxEnemies = 10;    
 
     private int m_CurrentEnemies = 0;
+    private float m_MaxSpawnIntervalStart;
 
     void Start()
     {
+        m_MaxSpawnIntervalStart = MaxSpawnInterval;
         StartCoroutine(SpawnLoop());
+    }
+
+    void Update()
+    {
+        MaxSpawnInterval = m_MaxSpawnIntervalStart - m_MaxSpawnIntervalStart * (Mathf.Clamp01((GameManager.Instance.ElapsedTime / 600)) * 0.5f);
     }
 
     private IEnumerator SpawnLoop()

@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d54c84b99d23c5439690c6b594a7abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  CurrentHealth: 60
-  MaxHealth: 60
+  CurrentHealth: 45
+  MaxHealth: 45
   bSnowHeals: 0
   OnHealthChanged:
     m_PersistentCalls:

@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SnowProjectile
   HitSoundPrefab: {fileID: 4225033943590867606, guid: 95247ea706fa47f4d84683238344f8af, type: 3}
   HitParticlesPrefab: {fileID: 3450297235441409650, guid: f1feedde742766b498bb66be325b76d2, type: 3}
+  SizeFactor: 1.8
+  Gravity: 9.81
 --- !u!54 &7366903708316632098
 Rigidbody:
   m_ObjectHideFlags: 0

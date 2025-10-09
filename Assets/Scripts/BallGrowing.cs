@@ -10,6 +10,7 @@ public class BallGrowing : MonoBehaviour
 
     [Header("Properties")]
     [SerializeField] private float GrowthRate = 1f;
+    [SerializeField] private float SnowCollectionRate = 1f;
     [SerializeField] public float StartRadius = 1f;
     [SerializeField] private float MaxRadius = 25f;
     private BallDistanceTracker m_Tracker;
@@ -31,6 +32,8 @@ public class BallGrowing : MonoBehaviour
         if (m_EffectAudioSource != null && m_EffectAudioSource.clip != null)
         {
             m_EffectAudioSource.Stop();
+            m_EffectAudioSource.pitch = Random.Range(0.8f, 1.2f);
+            m_EffectAudioSource.volume = Random.Range(0.8f, 1.2f);
             m_EffectAudioSource.Play();
         }
     }
@@ -72,7 +75,7 @@ public class BallGrowing : MonoBehaviour
     {
         if (m_Radius != MaxRadius)
         {
-            m_SnowStorage += m_Tracker.LastDistanceDelta;
+            m_SnowStorage += m_Tracker.LastDistanceDelta * SnowCollectionRate;
         }
         if (m_SnowStorage > m_SnowMax)
         {
@@ -110,7 +113,7 @@ public class BallGrowing : MonoBehaviour
     {
         if (SnowField)
         {
-            SnowField.NewHeight = SnowField.StartHeight + ((m_Radius - StartRadius) / MaxRadius) * SnowField.StartHeight * 0.7f;
+            SnowField.NewHeight = SnowField.StartHeight + ((m_Radius - StartRadius) / MaxRadius) * SnowField.StartHeight * 0.2f;
         }
     }
 

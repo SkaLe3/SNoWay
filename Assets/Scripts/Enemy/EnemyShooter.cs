@@ -44,7 +44,6 @@ public class EnemyShooter : MonoBehaviour
         GameObject projectile = FireProjectile(shotSource, launchVelocity);
         FireProjectile fireProjectile = projectile.GetComponent<FireProjectile>();
         fireProjectile.Gravity = Gravity;
-        fireProjectile.Damage = 10;
 
         // Play shot sound here;
     }

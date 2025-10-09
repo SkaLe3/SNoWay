@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public enum GameState { WaitingToStart, Playing, GameOver }
     public GameState CurrentState { get; private set; } = GameState.WaitingToStart;
+    public float ElapsedTime => m_ElapsedTime;
 
 
     [SerializeField] private GameObject GameOverPanel;
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         CurrentState = GameState.Playing;
+         Cursor.visible = false;
     }
 
     public void GameOver()
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
         if (CurrentState == GameState.GameOver) return;
         CurrentState = GameState.GameOver;
         ShowGameOver();
+        Cursor.visible = true;
     }
 
     public void RestartGame()

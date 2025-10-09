@@ -37,6 +37,8 @@ public class Enemy : MonoBehaviour, IInteractable
             if (m_DamageClip != null)
             {
                 m_AudioSource.clip = m_DamageClip;
+                m_AudioSource.pitch = Random.Range(0.8f, 1.2f);
+                m_AudioSource.volume = Random.Range(0.8f, 1.2f);
                 m_AudioSource.Play();
             }
         }
@@ -47,6 +49,8 @@ public class Enemy : MonoBehaviour, IInteractable
         if (m_DeathClip != null)
         {
             m_AudioSource.clip = m_DeathClip;
+            m_AudioSource.pitch = Random.Range(0.8f, 1.2f);
+            m_AudioSource.volume = Random.Range(0.8f, 1.2f);
             m_AudioSource.Play();
         }
         GameManager.Instance.EnemyDefeated();

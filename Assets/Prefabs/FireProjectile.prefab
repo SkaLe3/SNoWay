@@ -154,5 +154,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FireProjectile
   HitSoundPrefab: {fileID: 0}
   HitParticlePrefab: {fileID: 0}
-  Damage: 10
+  Damage: 6
   Gravity: 0
